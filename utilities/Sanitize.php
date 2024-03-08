@@ -31,7 +31,8 @@ class Sanitize {
         $sanitizedUsername = self::sanitizeString($username);
     
         // Validate alphanumeric and length
-        if (preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z0-9]{3,20}$/', $sanitizedUsername)) { // <-- Use $sanitizedUsername here instead of $username
+        if (preg_match('/^(?=.*\d)[a-zA-Z0-9]{3,20}$/', $sanitizedUsername)) 
+        { 
             return $sanitizedUsername; 
         } else {
             return false;
